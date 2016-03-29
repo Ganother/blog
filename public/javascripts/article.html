@@ -1,0 +1,15 @@
+
+    <div class="publish-bar">
+        <p class="f16 center">信息详情</p>
+        <div class="article-bar">
+            <h2 class="title f16">{{newsInfo.newsTitle}}</h2>
+            <p class="basic f14">发布人：{{newsInfo.newsAuthor}}
+            <span class="time">时间：{{newsInfo.newsTime}}</span> </p>
+            <div class="context" ng-bind-html="newsInfo.newsContent | trustHtml">
+
+            </div>
+            <div class="center">
+                <a class="or-btn inline-block" ng-click="deleteArticle()">删除</a>
+            </div>
+        </div>
+    </div>

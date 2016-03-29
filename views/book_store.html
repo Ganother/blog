@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="http://localhost:3000/stylesheets/main.css">
+  <script src="http://localhost:3000/javascripts/bower_components/angular/angular.js"></script>
+  <script src="http://localhost:3000/javascripts/bower_components/angular-route/angular-route.js"></script>
+  <script src="http://localhost:3000/javascripts/service.js"></script>
+  <script src="http://localhost:3000/javascripts/controller.js"></script>
+  <script src="http://localhost:3000/javascripts/main.js"></script>
+  <script src="http://localhost:3000/javascripts/directives.js"></script>
+  <title>激素不正常-图书馆</title>
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+  <div id="sideBar" class="side_bar">
+    <div class="basic_bar">
+      <div class="head">
+        <img src="http://localhost:3000/images/head.jpg" alt="" class="img">
+      </div>
+      <div class="basic_text">
+        <p class="name">Ganother</p>
+        <p class="desc desc1">多重人格型精神分裂√</p>
+        <p class="desc desc2">中二病晚期√</p>
+        <p class="desc desc3">幽闭依赖症患者√</p>
+      </div>
+    </div>
+    <ul class="nav_list">
+      <li class="nav_item"><a class="item" href="#/list" title="" target="">前端开发</a></li>
+      <li class="nav_item"><a class="item" href="" title="" target="">也许有彩蛋</a></li>
+      <li class="nav_item"><a class="item" href="" title="" target="">自拍</a></li>
+    </ul>
+  </div>
+  <div id="mainContent" class="main_content" ng-view>
+
+  </div>
+</body>
+</html>

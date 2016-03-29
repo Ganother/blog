@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="http://localhost:3000/stylesheets/main.css">
+  <title>SmartBook, just joking</title>
+  <script>
+    (function (window) {
+      var docEl = document.documentElement;
+      var h;
+
+      function setUnitA() {
+        window.rem = docEl.getBoundingClientRect().width / 18;
+        docEl.style.fontSize = window.rem + 'px';
+      }
+
+      window.addEventListener('resize', function () {
+        clearTimeout(h);
+        h = setTimeout(function(){
+          setUnitA();
+        }, 300);
+      }, false);
+
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          clearTimeout(h);
+          h = setTimeout(function(){
+            setUnitA();
+          }, 300);
+        }
+      }, false);
+
+      setUnitA();
+
+    })(window);
+  </script>
+</head>
+<body>
+<header class="main_header" id="mainHeader">
+  <div class="main_tab" id="mainTab">
+    <a href="" class="tab_item tab_active">文章</a>
+    <a href="" class="tab_item">专题</a>
+  </div>
+  <div class="sub_tab" id="subTab">
+    <div class="sub_container">
+      <a href="" class="tab_item tab_active">生活家</a>
+      <a href="" class="tab_item">世间事</a>
+      <a href="" class="tab_item">@IT</a>
+      <a href="" class="tab_item">市集</a>
+      <a href="" class="tab_item">空想家</a>
+      <a href="" class="tab_item">路易斯</a>
+      <a href="" class="tab_item">天空之塚</a>
+      <a href="" class="tab_item">地决</a>
+      <a href="" class="tab_item">从来都没有</a>
+    </div>
+  </div>
+</header>
+<section id="mainContent">
+  <div class="banner_bar" id="mainBanner">
+    <img src="http://localhost:3000/images/ahaha.jpg" alt="" width="100px">
+    <p class="context">我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒
+      我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒我是一个怒发冲冠的亚洲巨蟒</p>
+  </div>
+</section>
+<footer class="main_footer" id="mainFooter">
+  <div class="footer_tab" id="footerTab">
+    <!--<a href="" class="tab_item tab_active">发现</a>-->
+    <!--<a href="" class="tab_item">关注</a>-->
+    <!--<a href="" class="tab_item">发帖</a>-->
+    <!--<a href="" class="tab_item">我滴</a>-->
+    <!--<input type="text">-->
+  </div>
+</footer>
+<script src="http://localhost:3000/javascripts/bower_components/zepto/zepto.min.js"></script>
+<script src="http://localhost:3000/javascripts/bower_components/vue/dist/vue.js"></script>
+<script src="http://localhost:3000/javascripts/main.js"></script>
+</body>
+</html>

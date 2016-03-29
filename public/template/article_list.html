@@ -1,0 +1,20 @@
+<div ng-controller="ListController">
+  <ul class="text_list">
+    <li class="text_item" ng-repeat="item in articleList">
+      <a class="text" href="#/article/{{item._id}}">
+        <div class="img_bar">
+          <img src="{{item.imgUrl}}" alt="" class="img">
+        </div>
+        <div class="text_bar">
+          <div class="item_author">
+            <div class="head_bar">
+              <img src="{{item.headUrl}}" alt="" class="head">
+            </div>
+            <p class="item_name">{{item.author}}</p>
+          </div>
+        </div>
+        <p class="item_title">{{item.title}}</p>
+      </a>
+    </li>
+  </ul>
+</div>

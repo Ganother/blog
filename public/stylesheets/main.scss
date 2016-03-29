@@ -1,0 +1,359 @@
+//reset
+
+/*
+KISSY CSS Reset
+理念：清除和重置是紧密不可分的
+特色：1.适应中文 2.基于最新主流浏览器
+维护：玉伯(lifesinger@gmail.com), 正淳(ragecarrier@gmail.com)
+*/
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+  /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a{ text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+  font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+  border: none;
+  height: 1px;
+}
+
+@import "function";
+
+html { overflow: hidden; height: 100%}
+body{
+  height: 100%;
+  overflow: hidden;
+}
+.side_bar{
+  width: 20%;
+  background-color: #47b8e0;
+  color: #34314c;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+}
+.basic_bar{
+  margin-top: 40px;
+  .head{
+    border-radius: 100%;
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+    animation: fallIn 2s linear;
+    .img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .basic_text{
+    margin-top: 20px;
+    text-align: center;
+    .name{
+      font-size: 16px;
+      animation: nameFadeIn 3s ease-in-out;
+      margin-bottom: 20px;
+    }
+    .desc{
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      animation: descFadeIn 5s ease-in-out;
+    }
+    .desc1{
+      animation-duration: 4s;
+    }
+    .desc2{
+      animation-duration: 5s;
+    }
+    .desc3{
+      animation-duration: 6s;
+    }
+  }
+}
+
+.nav_list{
+  margin-top: 40px;
+  .nav_item{
+    margin: 20px auto 0;
+    width: 70%;
+    text-align: center;
+    .item{
+      display: block;
+      background-color: #ffc952;
+      transition: all .5s ease-in-out;
+      animation: colorIn 2s ease-in-out;
+      width: 100%;
+      font-size: 16px;
+      line-height: 36px;
+      color: #fff;
+      position: relative;
+      &:hover{
+        background-color: #ff7473;
+        &:after{
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      &:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 36px;
+        width: 100%;
+        content: '也许有彩蛋';
+        transform: scale(1);
+        opacity: 1;
+        transition: all .5s ease-in-out;
+      }
+    }
+    &:first-child{
+      .item{
+        &:after{
+          content: '前端开发';
+        }
+      }
+    }
+    &:last-child{
+      .item{
+        &:after{
+          content: '自拍';
+        }
+      }
+    }
+  }
+}
+
+@keyframes nameFadeIn {
+  0%{
+    opacity: 0;
+    transform: translate3d(-50%,0,0);
+  }
+  20%{
+    opacity: 0;
+    transform: translate3d(-50%,0,0);
+  }
+  50%{
+    opacity: .75;
+    transform: translate3d(10%,0,0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes descFadeIn {
+  0%{
+    opacity: 0;
+    transform: translate3d(-50%,0,0);
+  }
+  40%{
+    opacity: 0;
+    transform: translate3d(-50%,0,0);
+  }
+  50%{
+    opacity: .75;
+    transform: translate3d(10%,0,0);
+  }
+  90%{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes scaleIn {
+  0%{
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fallIn {
+  0%{
+    transform: scale(0) translate3d(0,-100%,0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1) translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes colorIn {
+  0%{
+    background-color: #47b8e0;
+    color: #47b8e0;
+  }
+  50%{
+    background-color: #ff7473;
+    color: #ffc952;
+  }
+  100%{
+    background-color: #ffc952;
+    color: #fff;
+  }
+}
+
+.main_content{
+  overflow: auto;
+  padding-left: 20%;
+}
+.text_list{
+  margin: 0 auto;
+  padding: 20px;
+  @extend %clearfix;
+  .text_item{
+    margin: 20px 10px;
+    width: 300px;
+    float: left;
+    position: relative;
+    &:after{
+      display: block;
+      content: '';
+      width: 0;
+      border-bottom: 1px solid #fff;
+      -webkit-transition: all .5s ease-in-out;
+      -moz-transition: all .5s ease-in-out;
+      -ms-transition: all .5s ease-in-out;
+      -o-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+    }
+    &:hover{
+      .img{
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      &:after{
+        width: 100%;
+        border-bottom-color: #ff7473;
+      }
+    }
+  }
+  .img_bar{
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+  }
+  .img{
+    display: block;
+    width: 300px;
+    height: 200px;
+    opacity: .55;
+    -webkit-transform-origin:50% 50%;
+    -moz-transform-origin:50% 50%;
+    -ms-transform-origin:50% 50%;
+    -o-transform-origin:50% 50%;
+    transform-origin:50% 50%;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  .text{
+    font-size: 20px;
+    display: block;
+    color: #34314c;
+  }
+  .text_bar{
+    padding: 0 10px;
+  }
+  .item_author{
+    height: 30px;
+    margin: 5px 0;
+    .head_bar{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: top;
+      .head{
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .item_name{
+      display: inline-block;
+      line-height: 30px;
+      font-size: 14px;
+      color: #666;
+    }
+  }
+  .item_title{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    height: 40px;
+    line-height: 20px;
+    padding: 80px 0;
+    color: #34314c;
+    width: 100%;
+    text-align: center;
+  }
+}
+

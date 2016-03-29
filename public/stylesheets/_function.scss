@@ -1,0 +1,95 @@
+$baseFont: 40;
+
+@function parseInt($n){
+  @return $n / ($n * 0 +1);
+}
+
+@function rem($px){
+  $list: ();
+  @each $item in $px{
+    @if $item == 0 or $item == auto{
+      $list: append($list, $item);
+    }@else{
+      $unit: unit($item);
+      $val: parseInt($item);
+
+      @if $unit == px {
+        $list: append($list, ($val / $baseFont + rem))
+      }
+
+      @if $unit == rem {
+        $list: append($list, $item);
+      }
+    }
+  }
+  @return $list;
+}
+
+%top_border{
+
+  position: relative;
+
+  &:after{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 0;
+
+    border-bottom: 1px solid #ddd;
+
+    -webkit-transform: scaleY(0.5);
+
+    -webkit-transform-origin: 0 0;
+
+  }
+
+}
+
+
+
+%bottom_border{
+
+  position: relative;
+
+  &:after{
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -1px;  // transform 不改变元素占位
+
+    left: 0;
+
+    right: 0;
+
+    height: 0;
+
+    border-bottom: 1px solid #ddd;
+
+    -webkit-transform: scaleY(0.5);
+
+    -webkit-transform-origin: 0 0;
+
+  }
+
+}
+
+%clearfix{
+   &:after{
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: '';
+     clear: both;
+     height: 0;
+   }
+}

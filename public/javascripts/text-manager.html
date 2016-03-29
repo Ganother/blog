@@ -1,0 +1,29 @@
+
+    <div class="publish-bar" ng-controller="ListController">
+        <p class="f16 center">信息管理</p>
+        <div class="row clearfix choose-bar" ng-show="!weight">
+            <a class="grade-choose" ng-class="{true:'active',false:''}[term==item]" ng-repeat="item in terms" ng-click="superGetNews(item)">{{item}}级</a>
+        </div>
+        <p class="center" ng-show="weight">所在年级{{adminInfo.grade}}</p>
+        <div class="row">
+            <ul class="text-list">
+                <li class="text-item" ng-repeat="item in topNews" value="{{item.newsNo}}">
+                    <a class="text f14" href="#/article/{{item.newsNo}}">{{item.newsTitle}}</a>
+                    <button class="upto f14" ng-click="removeTop(item.newsNo)">取消置顶</button>
+                </li>
+                <li class="side-text" ng-show="topNews.length!=0">置顶信息:</li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="text-list">
+                <li class="text-item" ng-repeat="item in normalNews" value="{{item.newsNo}}">
+                    <a class="text f14" href="#/article/{{item.newsNo}}">{{item.newsTitle}}</a>
+                    <button class="upto f14" ng-click="addTop(item.newsNo)">置顶</button>
+                </li>
+                <li class="side-text" ng-show="normalNews.length!=0">普通信息:</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="center"><a class="inline-block" ng-show="before" ng-click="frontList()">上一页</a><a class="inline-block" ng-show="after" ng-click="nextList()">下一页</a></div>
+        </div>
+    </div>
