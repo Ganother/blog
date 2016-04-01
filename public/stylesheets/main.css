@@ -20,27 +20,14 @@ body,
 button, input, select, textarea {
   /* for ie */
   /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
-  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  font: 14px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
   /* 用 ascii 字符表示，使得在任何编码下都无问题 */ }
-
-h1 {
-  font-size: 18px;
-  /* 18px / 12px = 1.5 */ }
-
-h2 {
-  font-size: 16px; }
-
-h3 {
-  font-size: 14px; }
-
-h4, h5, h6 {
-  font-size: 100%; }
 
 address, cite, dfn, em, var {
   font-style: normal; }
 
 /* 将斜体扶正 */
-code, kbd, pre, samp, tt {
+kbd, samp, tt {
   font-family: "Courier New", Courier, monospace; }
 
 /* 统一等宽字体 */
@@ -82,11 +69,6 @@ button, input, select, textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
-
-/* 重置 hr */
-hr {
-  border: none;
-  height: 1px; }
 
 .text_list:after {
   visibility: hidden;
@@ -235,7 +217,8 @@ body {
     color: #fff; } }
 .main_content {
   overflow: auto;
-  padding-left: 20%; }
+  padding-left: 20%;
+  height: 100%; }
 
 .text_list {
   margin: 0 auto;
@@ -265,6 +248,8 @@ body {
     .text_list .text_item:hover:after {
       width: 100%;
       border-bottom-color: #ff7473; }
+    .text_list .text_item:hover .item_title {
+      color: #fff; }
   .text_list .img_bar {
     overflow: hidden;
     width: 300px;
@@ -318,6 +303,22 @@ body {
     padding: 80px 0;
     color: #34314c;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out; }
+
+.context {
+  padding: 20px 40px;
+  line-height: 1.5; }
+  .context h1 {
+    font-size: 30px;
+    border-bottom: 1px solid #666; }
+  .context p, .context li, .context pre {
+    margin: 20px 0; }
+  .context pre {
+    overflow-x: scroll; }
 
 /*# sourceMappingURL=main.css.map */

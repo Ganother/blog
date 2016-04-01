@@ -21,16 +21,12 @@ th, td { /* table elements 表格元素 */
 body,
 button, input, select, textarea { /* for ie */
   /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
-  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+  font: 14px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
 }
 
-h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
-h2 { font-size: 16px; }
-h3 { font-size: 14px; }
-h4, h5, h6 { font-size: 100%; }
 
 address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+kbd, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
 small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
 
 /* 重置列表元素 */
@@ -60,11 +56,6 @@ table {
   border-spacing: 0;
 }
 
-/* 重置 hr */
-hr {
-  border: none;
-  height: 1px;
-}
 
 @import "function";
 
@@ -256,6 +247,7 @@ body{
 .main_content{
   overflow: auto;
   padding-left: 20%;
+  height: 100%;
 }
 .text_list{
   margin: 0 auto;
@@ -289,6 +281,9 @@ body{
       &:after{
         width: 100%;
         border-bottom-color: #ff7473;
+      }
+      .item_title{
+        color: #fff;
       }
     }
   }
@@ -354,6 +349,25 @@ body{
     color: #34314c;
     width: 100%;
     text-align: center;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+}
+.context{
+  padding: 20px 40px;
+  line-height: 1.5;
+  h1{
+    font-size: 30px;
+    border-bottom: 1px solid #666;
+  }
+  p,li,pre{
+    margin: 20px 0;
+  }
+  pre{
+    overflow-x: scroll;
   }
 }
 

@@ -1,5 +1,5 @@
 
-var myApp=angular.module('myApp',['ngRoute','controllers','directive']);
+var myApp=angular.module('myApp',['ngRoute','controllers','directive','angularLoad']);
 
 myApp.config(['$routeProvider',function($routeProvider){
     $routeProvider.when('/list',{
@@ -10,7 +10,7 @@ myApp.config(['$routeProvider',function($routeProvider){
         templateUrl: '/template/article.html'
     }).otherwise({
             redirectTo: '/'
-        })
+    })
     ;
 }]);
 

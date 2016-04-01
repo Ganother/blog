@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var request = require('request');
-var markdown = require('markdown').markdown;
+var markdown = require('remarkable');
+var md = new markdown({
+  typographer:  true
+});
 
 
 require('./models.js');
@@ -22,7 +25,7 @@ router.get('/get_f2e_list', function(req, res, next){
   var mArticle = mongoose.model('Article');
   mArticle.find({}, function(err, results){
     if(err){
-      res.json({
+      return next({
         'errcode': 1,
         'errmsg': '获取mongodb数据失败'
       });
@@ -45,8 +48,6 @@ router.get('/get_f2e_detail', function(req, res, next){
       });
     }
 
-    console.log(err,results);
-
     request.get(
       {
         url:results[0].gitUrl,
@@ -58,7 +59,7 @@ router.get('/get_f2e_detail', function(req, res, next){
           var detail = JSON.parse(body);
           res.json({
             errcode: 0,
-            data: markdown.toHTML(detail.body)
+            data: md.render(detail.body)
           });
         }else{
           console.log(response.statusCode);
