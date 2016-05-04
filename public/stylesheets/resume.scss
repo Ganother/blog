@@ -1,0 +1,151 @@
+@import "function";
+
+html{
+  height: 100%;
+}
+body{
+  width: 100%;
+  height: 400%;
+}
+%slide{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.viewport{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main_container{
+  @extend %slide;
+  -webkit-transition: all .5s linear;
+  -webkit-transform-style: preserve-3d;
+}
+.slide_basic{
+  @extend %slide;
+  background: url("/images/background_01.jpg") 50% 50%;
+}
+.slide_projects{
+  @extend %slide;
+  background: url("/images/background_02.jpg") 50% 50%;
+  .title{
+
+  }
+}
+.slide_contact{
+  @extend %slide;
+  background: url("/images/background_03.jpg") 50% 50%;
+}
+.slide_info{
+  @extend %slide;
+  background: url("/images/background_04.jpg") 50% 50%;
+}
+.wrapper{ 
+  width: 80%;
+  margin: 30px auto;
+  background-color: rgba(255,255,255,.6);
+}
+.basic_bar{
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(255,255,255,.6);
+  .head_bar{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: 20px auto;
+  }
+  .head{
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
+  .split{
+    color: #ff7473;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .link{
+    color: #34314c;
+  }
+  .name{
+    color: #98374a;
+    font-weight: 700;
+  }
+}
+
+.bottom_arrow{
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+}
+.arrow_item{
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border-bottom: 2px solid #ececec;
+  border-right: 2px solid #ececec;
+  margin-top: -20px;
+  -webkit-animation:toggleFade 2s ease-in-out infinite;
+  -o-animation:toggleFade 2s ease-in-out infinite;
+  animation:toggleFade 2s ease-in-out infinite;
+  &:first-child{
+    animation-delay: 1.6s;
+  }
+  &:nth-child(2){
+    animation-delay: 1.2s;
+   }
+  &:nth-child(3){
+    animation-delay: .8s;
+  }
+  &:nth-child(4){
+    animation-delay: .4s;
+  }
+}
+
+.basic_item{
+  text-align: center;
+  margin-bottom: 10px;
+}
+@keyframes  crazyRotate{
+  0%{
+    -webkit-transform: translateZ(0) rotateY(0deg)
+  }
+  100%{
+    -webkit-transform: translateZ(0) rotateY(720deg)
+  }
+}
+
+@keyframes toggleFade {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+

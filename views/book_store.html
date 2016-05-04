@@ -29,11 +29,15 @@
     <ul class="nav_list">
       <li class="nav_item"><a class="item" href="#/list" title="" target="">前端开发</a></li>
       <li class="nav_item"><a class="item" href="" title="" target="">也许有彩蛋</a></li>
-      <li class="nav_item"><a class="item" href="" title="" target="">自拍</a></li>
+      <li class="nav_item"><a class="item" href="/ganother" title="" target="">自拍</a></li>
     </ul>
   </div>
   <div id="mainContent" class="main_content" ng-view>
 
+  </div>
+
+  <div class="loading_layer" id="loadingLayer" ng-if="loading">
+    <img src="/images/loading.gif" alt="" class="loading">
   </div>
 </body>
 

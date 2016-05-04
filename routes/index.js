@@ -11,12 +11,13 @@ var md = new markdown({
 require('./models.js');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('smartBook.html');
+
+router.get('/', function(req, res, next){
+  res.render('book_store.html')
 });
 
-router.get('/blog', function(req, res, next){
-  res.render('book_store.html')
+router.get('/ganother', function(req, res, next){
+  res.render('resume.html')
 });
 
 

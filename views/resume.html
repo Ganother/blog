@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="/stylesheets/resume.css">
+  <title>个人馆</title>
+</head>
+<body>
+<div class="viewport" r-style="-webkit-perspective: {half}px; ">
+  <div class="main_container" r-style=" -webkit-transform-origin: 50% 50% {half}px ; -webkit-transform: translateZ(0) rotateY(0deg)">
+    <div class="slide_basic">
+      <div class="basic_bar">
+        <div class="head_bar"><img src="/images/head.jpg" alt="" class="head"></div>
+        <div class="btn_bar">
+          <p class="basic_item"><span class="name">email: </span>wangcong_1993@foxmail.com</p>
+          <p class="basic_item"><span class="name">github：</span>ganother<span class="split">|</span><a href="https://github.com/Ganother" title="" target=""
+                                                                              class="link">https://github.com/Ganother</a></p>
+          <p class="basic_item"><span class="name">微博：</span><a href="http://weibo.com/ganother?is_all=1" title="" target="" class="link">Ganother_首席银盘君</a></p>
+          <p class="basic_item">前端开发/页面重构</p>
+          <p class="basic_item"><span class="name">tags：</span>中二\精分\喜独\凉\dance</p>
+        </div>
+      </div>
+      <div class="bottom_arrow">
+        <i class="arrow_item"></i>
+        <i class="arrow_item"></i>
+        <i class="arrow_item"></i>
+        <i class="arrow_item"></i>
+        <i class="arrow_item"></i>
+      </div>
+    </div>
+    <div class="slide_projects" r-style="-webkit-transform: translateZ({width}px) ">
+      <div class="wrapper">
+        <p class="title">Skills</p>
+        <div class="skill-item">
+          <div class="circleProgress_wrapper">
+            <div class="wrapper right">
+              <div class="circleProgress rightcircle"></div>
+            </div>
+            <div class="wrapper left">
+              <div class="circleProgress leftcircle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide_contact" r-style="-webkit-transform: translate3d(-{half}px, 0, {half}px)  rotateY(90deg) rotateZ(180deg)"></div>
+    <div class="slide_info" r-style="-webkit-transform: translate3d({half}px, 0, {half}px)  rotateY(-90deg) rotateZ(180deg)"></div>
+  </div>
+</div>
+
+<div class="loading_layer" id="loadingLayer" style="display:none;">
+  <img src="/images/loading.gif" alt="" class="loading">
+</div>
+</body>
+<script src="/javascripts/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/javascripts/resume.js"></script>
+</html>

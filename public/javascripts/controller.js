@@ -8,12 +8,10 @@ controllers.controller("ListController",function($scope,listService, $routeParam
              }else{
                  console.log(data);
              }
-
          });
 });
 
 controllers.controller("MainController",function($scope,$routeParams){
-
 
 });
 
@@ -45,5 +43,9 @@ controllers.controller("ArticleController",function($sce,$scope,articleService,$
 
 });
 
+//自拍控制器
+controllers.constructor("ResumeController", function($scope){
+
+});
 
 

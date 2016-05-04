@@ -1,7 +1,7 @@
 
 var myApp=angular.module('myApp',['ngRoute','controllers','directive','angularLoad']);
 
-myApp.config(['$routeProvider',function($routeProvider){
+myApp.config(['$routeProvider','$httpProvider',function($routeProvider, $httpProvider){
     $routeProvider.when('/list',{
         controller: 'ListController',
         templateUrl: '/template/article_list.html'
@@ -9,9 +9,9 @@ myApp.config(['$routeProvider',function($routeProvider){
         controller: 'ArticleController',
         templateUrl: '/template/article.html'
     }).otherwise({
-            redirectTo: '/'
-    })
-    ;
+        redirectTo: '/list'
+    });
+    $httpProvider.interceptors.push('timestampMarker');
 }]);
 
 myApp.filter("trustHtml", function ($sce) {
@@ -20,3 +20,18 @@ myApp.filter("trustHtml", function ($sce) {
     }
 });
 
+myApp.factory('timestampMarker', ["$rootScope", function ($rootScope) {
+    var timestampMarker = {
+        request: function (config) {
+            $rootScope.loading = true;
+            config.requestTimestamp = new Date().getTime();
+            return config;
+        },
+        response: function (response) {
+             $rootScope.loading = false;
+            response.config.responseTimestamp = new Date().getTime();
+            return response;
+        }
+    };
+    return timestampMarker;
+}]);
