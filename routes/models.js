@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var uri = 'mongodb://username:password@hostname:port/databasename';
 uri = 'mongodb://localhost/blog';
 
-mongoose.connect(uri);
+var re = mongoose.connect(uri);
 
 //文章列表model
 var _Article = new mongoose.Schema({
@@ -17,7 +17,8 @@ var _Article = new mongoose.Schema({
   gitUrl: String, //文章的git接口地址
   status: Number,
   imgUrl: String,
-  headUrl: String
+  headUrl: String,
+  articleId: Number
 });
 
 mongoose.model('Article', _Article);

@@ -1,6 +1,7 @@
 
 
 @import "function";
+@import "compass/css3";
 
 html { overflow: hidden; height: 100%}
 body{
@@ -328,4 +329,20 @@ body{
   pre{
     overflow-x: scroll;
   }
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 30px;
+  text-align: center;
+  z-index: 2000;
+  .footer-text{
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
 }
